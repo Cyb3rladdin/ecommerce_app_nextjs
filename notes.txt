@@ -1,0 +1,48 @@
+**this app uses React + NextJs as well as the Sanity CMS for structured content and Stripe for payment integration
+
+**npx create-next-app
+
+**cd into created ecommerce file
+
+**update dependencies in the package.json file
+
+**to use sanity go to the following linke and run required commands in terminal: (https://www.sanity.io/javascriptmastery2022)
+  npm install -g @sanity/cli
+  sanity init --coupon javascriptmastery2022
+
+** go into the .gitignore and remove the / from the node_modules dependency so that the node_modules inside the project folder is included as well
+
+**Sanity commands:
+  sanity start - to run Sanity Studio
+  sanity docs - to open the documentation in a browser
+  sanity manage - to open the project settings in a browser
+  sanity help - to explore the CLI manual
+
+**cd into the folder created by sanity which should have the same name as the project folder. (rename the folder to avoid confusion)
+  once inside the folder run 'sanity start' in the terminal which will start the Sanity structured content interface, allowing us to make backend type updates to the app
+
+
+**create the product.js and banner.js schema files in the schemas folder
+
+**to see the actual app cd back into the project folder and run 'npm run dev'
+
+**use the global.css inside of the styles folder to style the app
+
+**create the components folder and include a index.js file that will be used to export the components
+
+**to connect to Sanity create a lib folder and add a client.js file that will be used for our Sanity client
+
+**cd into the sanity_ecommerce folder and run 'sanity manage' in order to get the values needed for the client.js file
+
+**run sanity start to add products to the banner
+
+**within the pages folder create a new folder called products for the products and add a dynamic file called [slug].js (writing a filename in square brackets makes it dynamic)
+
+**create a context folder inside of the ecommerce folder and add a StateContext.js file that will manage the entire state of the application
+
+**wrap application (_app.js) within a Context.Provider component (StateContext.js) so that all components have access to the values
+
+**within the pages -> api folder is where NextJs allows us to write code for our backend
+  create a stripe.js file within the api folder that will hold our Stripe code
+
+**to fetch a Stripe promise create a getStripe.js file within the 'lib' folder, this file while use the loadStripe object
